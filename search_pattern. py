@@ -1,0 +1,16 @@
+#! /usr/bin/python3
+
+import os
+import sys
+import re
+
+line_num = 0
+match_str = input('please input match_pattern:')
+print(match_str)
+
+with open('test_log','r') as f:
+    for line in f:
+        line_num = line_num + 1
+        if re.search(match_str,line)!=None:
+           print(str(line_num) + ':'+ line)
+f.close()
